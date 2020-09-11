@@ -1,0 +1,134 @@
+syntax = "proto3";
+
+import "google/protobuf/timestamp.proto";
+
+package msg.ps2eventlistener;
+
+message CensusEvent {
+    string eventName = 1;
+    int32 worldID = 2;
+    int32 zoneID = 3;
+    google.protobuf.Timestamp timestamp = 4;
+    string payload = 5;
+}
+
+message AchievementEarnedCensusEvent {
+    string characterID = 1;
+    string achievementID = 2;
+}
+
+message BattleRankUpCensusEvent {
+    string characterID = 1;
+    int32 battleRank = 2;
+}
+
+message ContinentLockCensusEvent {
+    int32 triggeringFactionID = 1;
+    int32 metagameEventID = 2;
+    float vsPopulation = 3;
+    float ncPopulation = 4;
+    float trPopulation = 5;
+}
+
+message ContinentUnlockCensusEvent {
+    int32 triggeringFactionID = 1;
+    int32 metagameEventID = 2;
+}
+
+message DeathCensusEvent {
+    string attackerCharacterID = 1;
+    int32 attackerFireModeID = 2;
+    int32 attackerLoadoutID = 3;
+    int32 attackerVehicleID = 4;
+    int32 attackerWeaponID = 5;
+    string characterID = 6;
+    int32 characterLoadoutID = 7;
+    bool isHeadshot = 8;
+    string attackerCharacterName = 9;
+    int32 attackerCharacterFactionID = 10;
+    string attackerCharacterOutfitID = 11;
+    int32 attackerBattleRank = 12;
+    string characterName = 13;
+    int32 characterFactionID = 14;
+    string characterOutfitID = 15;
+    int32 characterBattleRank = 16;
+}
+
+message FacilityControlCensusEvent {
+    int32 facilityID = 1;
+    int32 newFactionID = 2;
+    int32 oldFactionID = 3;
+    int32 durationHeld = 4;
+    string outfitID = 5;
+    string outfitName = 6;
+    string outfitAlias = 7;
+}
+
+message GainExperienceCensusEvent {
+    string characterID = 1;
+    int32 experienceID = 2;
+    int32 amount = 3;
+    int32 loadoutID = 4;
+    string otherID = 5;
+}
+
+message MetagameEventCensusEvent {
+    int32 instanceID = 1;
+    int32 metagameEventID = 2;
+    string metagameEventState = 3;
+    float factionVS = 4;
+    float factionNC = 5;
+    float factionTR = 6;
+    float experienceBonus = 7;
+}
+
+message PlayerFacilityCaptureCensusEvent {
+    string characterID = 1;
+    int32 facilityID = 2;
+    string outfitID = 3;
+    string characterName = 4;
+    int32 characterFactionID = 5;
+    string outfitName = 6;
+    string outfitAlias = 7;
+}
+
+message PlayerFacilityDefendCensusEvent {
+    string characterID = 1;
+    int32 facilityID = 2;
+    string outfitID = 3;
+    string characterName = 4;
+    int32 characterFactionID = 5;
+    string outfitName = 6;
+    string outfitAlias = 7;
+}
+
+message PlayerLoginCensusEvent {
+    string characterID = 1;
+    string characterName = 2;
+    int32 characterFactionID = 3;
+}
+
+message PlayerLogoutCensusEvent {
+    string characterID = 1;
+    string characterName = 2;
+    int32 characterFactionID = 3;
+}
+
+message VehicleDestroyCensusEvent {
+    string attackerCharacterID = 1;
+    int32 attackerLoadoutID = 2;
+    int32 attackerVehicleID = 3;
+    int32 attackerWeaponID = 4;
+    string characterID = 5;
+    int32 facilityID = 6;
+    int32 factionID = 7;
+    int32 vehicleID = 8;
+    string attackerCharacterName = 9;
+    int32 attackerCharacterFactionID = 10;
+    string attackerCharacterOutfitID = 11;
+    int32 attackerBattleRank = 12;
+    string characterName = 13;
+    int32 characterFactionID = 14;
+    string characterOutfitID = 15;
+    int32 characterBattleRank = 16;
+}
